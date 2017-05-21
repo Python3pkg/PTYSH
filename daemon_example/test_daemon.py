@@ -24,12 +24,12 @@ class EventHandler(dbus.service.Object):
 
     @dbus.service.method(DBUS_BUS_NAME)
     def receive_signal(self, in_msg):
-        print ('I got the message(\'%s\')' % in_msg)
+        print(('I got the message(\'%s\')' % in_msg))
         self.print_msg = in_msg
         return True
 
     def repeat_print_msg(self):
-        print (self.print_msg)
+        print((self.print_msg))
         return True
 
 

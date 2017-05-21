@@ -34,4 +34,4 @@ class PtyshModule(object):
                 # invisible state is true and workable state is false.
                 continue
 
-            print ('%s%s' % (cmd[0].ljust(PRINT_FORMAT_PADDING), cmd[1]))   # print command name and description.
+            print(('%s%s' % (cmd[0].ljust(PRINT_FORMAT_PADDING), cmd[1])))   # print command name and description.

@@ -25,7 +25,7 @@ class IoControl(object):
         self._host_name = self.get_host_name()
 
     def get_input_command(self):
-        return input() if sys.version_info >= (3,0) else raw_input()
+        return eval(input()) if sys.version_info >= (3,0) else input()
 
     def set_prompt(self):
         prompt = '#' if Status().login_state == True else '>'

@@ -156,7 +156,7 @@ class BasicCommand(Singleton):
             if cmd[COMMAND_LIST_HIDDEN_IDX] == True or cmd[COMMAND_LIST_WORKING_IDX] == False:
                 continue
 
-            print ('%s%s' % (cmd[COMMAND_LIST_CMD_IDX].ljust(PRINT_FORMAT_PADDING), cmd[COMMAND_LIST_DOC_IDX]))
+            print(('%s%s' % (cmd[COMMAND_LIST_CMD_IDX].ljust(PRINT_FORMAT_PADDING), cmd[COMMAND_LIST_DOC_IDX])))
 
     def cmd_exit(self):
         print ('Program exit')
@@ -164,7 +164,7 @@ class BasicCommand(Singleton):
 
     def cmd_show_hostname(self):
         io = IoControl()
-        print (io.get_host_name())
+        print((io.get_host_name()))
 
     def cmd_configure_terminal(self):
         Status().configure_terminal_state = True
@@ -197,7 +197,7 @@ class ModulesCommand(Singleton):
                 module = LoadModule(file_name, file_name)
                 instance = module.instance
             except:
-                print ('Your module(\'%s\') has a problem.' % file_name)
+                print(('Your module(\'%s\') has a problem.' % file_name))
                 print ('Please check your module\'s file name and class name.')
                 continue
             else:
@@ -209,7 +209,7 @@ class ModulesCommand(Singleton):
 
 
             if self.module_cmd_duplicate_check(node_name) == True:
-                print ('\'%s\' module name is duplicated, so this module is not added.' % file_name)
+                print(('\'%s\' module name is duplicated, so this module is not added.' % file_name))
                 continue
 
             self._modules_command.append([node_name, module_list])
@@ -264,7 +264,7 @@ class ModulesCommand(Singleton):
     def cmd_list(self):
         cmd_list = self._subnode_modules_command if Status().sub_node == True else self._modules_command
         for cmd in self._modules_command:
-            print ('%s' % cmd[COMMAND_LIST_CMD_IDX].ljust(PRINT_FORMAT_PADDING))
+            print(('%s' % cmd[COMMAND_LIST_CMD_IDX].ljust(PRINT_FORMAT_PADDING)))
 
     def cmd_exit(self):
         Status().configure_terminal_state = False
